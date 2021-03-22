@@ -1,0 +1,279 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+/* ============
+layout
+============ */
+
+.container {
+  max-width: 90%;
+  min-width: 250px;
+  margin: 0 auto;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 0;
+  flex-wrap: wrap;
+}
+
+nav .logo-block {
+  display: flex;
+}
+
+.search-block {
+  margin-left: 1em;
+  border: 1px solid #d9dde7;
+  border-radius: 5px;
+  padding: 0.5em 0.8em;
+}
+
+input {
+  border: none;
+  outline: none;
+  min-width: 180px;
+}
+
+nav ul.show {
+  display: flex;
+}
+
+nav .menu-items {
+  display: none;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  background-color: whitesmoke;
+  margin-top: 1em;
+}
+
+nav .menu-items a {
+  text-decoration: none;
+  color: gray;
+  padding-top: 1em;
+}
+
+nav .menu-items a:last-child {
+  padding-bottom: 1em;
+}
+
+/* hero section */
+
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
+    url("../img/mobile-img.png") no-repeat bottom;
+  background-size: cover;
+  min-height: calc(100vh - 65px);
+  display: flex;
+  align-items: center;
+}
+
+.hero__textblock {
+  width: 90%;
+  margin: 0 auto;
+  color: #d9dde7;
+  min-width: 250px;
+}
+
+.hero__emoji {
+  font-size: 3rem;
+  margin-bottom: 0.5em;
+}
+
+.hero__textblock > h1 {
+  font-size: 2rem;
+  line-height: 1.3;
+  margin-bottom: 0.5em;
+  font-weight: 400;
+}
+
+.hero__search-block {
+  width: 100%;
+  margin-left: 0;
+}
+
+.hero__search-block > input {
+  background: transparent;
+  width: 90%;
+}
+
+.hero ::placeholder {
+  color: #d9dde7;
+}
+
+.hero__btn-block {
+  margin-top: 2em;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.hero__btn-block .btn {
+  color: #fff;
+  border: none;
+  padding: 0.7em 1em;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 0.5em;
+  margin-bottom: 0.5em;
+  outline: none;
+}
+
+.hero__btn-block .btn-success {
+  background: #25df8d;
+}
+
+.hero__btn-block .btn-secondary {
+  background: #c1c8d7;
+}
+
+.hero__img-block {
+  display: none;
+}
+
+/* appartments */
+
+.apartments {
+  background: #f6f6f7;
+}
+
+.apartments .apartments__heading {
+  display: flex;
+  justify-content: space-between;
+}
+
+.apartments .apartments__heading h2 {
+  font-weight: 400;
+  color: #2b313d;
+  font-size: 1.2rem;
+}
+
+.apartments .apartments__heading h2 span {
+  color: #949fb7;
+}
+
+.apartments .apartments__heading a {
+  color: #596172;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.apartments__list-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1em;
+}
+
+.apartments {
+  padding: 2em 0;
+}
+
+.apartments__meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.apartments__meta span {
+  color: #596172;
+  padding-top: 0.4em;
+  font-size: 0.8rem;
+}
+
+.apartments__title {
+  margin-top: 1em;
+}
+
+.apartments__title a {
+  text-decoration: none;
+}
+
+.apartments__card img {
+  width: 100%;
+}
+
+/* meadia queries */
+
+@media screen and (min-width: 768px) {
+  nav .hamburger {
+    display: none;
+  }
+
+  nav .menu-items {
+    display: flex;
+    width: auto;
+    align-items: center;
+    flex-direction: row;
+    background: transparent;
+    margin: 0;
+  }
+
+  nav .menu-items img {
+    margin-top: 1em;
+  }
+
+  nav .menu-items a {
+    padding: 0;
+    margin-left: 1.8em;
+  }
+
+  nav {
+    flex-wrap: nowrap;
+  }
+
+  .hero__textblock {
+    width: 60%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  /* hero */
+  .hero {
+    background: #fff;
+    min-height: auto;
+  }
+
+  .hero__textblock {
+    width: 45%;
+    margin-left: 5%;
+  }
+  .hero__img-block {
+    margin-left: 2em;
+    width: 55%;
+    display: block;
+  }
+
+  .hero__img-block img {
+    height: 100%;
+    width: 100%;
+  }
+
+  .hero__textblock h1 {
+    color: #2b313d;
+    font-weight: 400;
+    width: 100%;
+  }
+
+  .apartments__list-wrapper {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media (min-width: 1192px) {
+  html {
+    font-size: 20px;
+  }
+}
